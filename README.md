@@ -36,11 +36,14 @@ A full-stack Food Ordering System built with the **MERN stack** and **Vite**. Th
 ---
 
 ## 📁 Project Structure
+
+```bash
 foodorderingsystem/
 ├── backend/ # Express API, models, routes
 ├── frontend/ # Vite + React frontend
 └── README.md # You're here!
 
+```
 ---
 
 ## ⚙️ Getting Started
