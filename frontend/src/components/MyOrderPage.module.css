@@ -1,0 +1,74 @@
+.orderContainer {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 0rem 1.5rem;
+    height: calc(100dvh - 210px);
+    overflow-y: auto;
+}
+
+.orderContainer h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.noOrdersContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 340px;
+}
+
+.noOrdersContainer p {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.orderItems {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+.orderCard {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    gap: 1rem;
+    color: var(--textColor);
+    background-color: var(--mainColor);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .orderCard:active {
+    transform: scale(1.05);
+  }
+
+  a > p {
+    text-align: center;
+    font-size: 0.80rem;
+    color: blue;
+    font-weight: 500;
+  }
+
+.orderNumberContainer {
+    display: block;
+}
+
+.orderDetailsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.orderDetailsContainer div:nth-child(1) p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px; /* Adjust as needed */
+}
+
+

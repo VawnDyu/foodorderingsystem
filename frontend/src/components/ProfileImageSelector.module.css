@@ -1,0 +1,34 @@
+.selectorGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 12px;
+    padding: 16px; /* Add extra space if needed */
+    max-height: 230px;
+    overflow-y: auto;
+  }
+  
+  .avatarButton {
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    padding: 4px;
+    cursor: pointer;
+    transition: border 0.2s ease;
+    margin: 0;
+  }
+  
+  .avatarImage {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .avatarImage:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    background-color: #f8f8f8;
+    cursor: pointer;
+  }

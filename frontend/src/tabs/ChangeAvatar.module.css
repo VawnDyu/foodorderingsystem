@@ -1,0 +1,95 @@
+/* ChangeAvatar.module.css */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: calc(100dvh - 55px);
+}
+
+.profileCard {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+
+  background-color: var(--mainColor);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  height: calc(100dvh - 130px);
+  text-align: center;
+}
+
+.imageWrapper {
+  margin-top: 2rem;
+  width: 125px;
+  cursor: pointer;
+}
+
+.profileImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.3rem;
+  border: 3px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.profileImage:hover {
+  border-color: #999;
+}
+
+.imgText {
+  font-size: 0.775rem;
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.infoSection {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: center;
+}
+
+.nickname {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.username {
+    font-size: 0.875rem;
+    color: #999;
+    font-weight: bold;
+}
+
+.email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: var(--textColor);
+  font-weight: 500;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--textColor);
+    font-weight: 500;
+}

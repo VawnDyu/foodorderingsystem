@@ -1,0 +1,38 @@
+.privacyContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    color: var(--textColor);
+    background: var(--mainColor);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+  
+.privacyTitle {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+  
+.privacyDate {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+  
+.privacySection {
+    margin-bottom: 20px;
+}
+
+.privacySection p {
+    margin: 10px 0px;
+}
+  
+.privacySection h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+  
+.privacySection ul {
+    padding-left: 40px;
+    line-height: 1.6;
+}

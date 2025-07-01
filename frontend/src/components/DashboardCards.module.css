@@ -1,0 +1,119 @@
+.cards {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--mainColor);
+    padding: 1rem;
+    border-radius: 6px;
+    flex: 1;
+    min-width: 180px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    cursor: pointer;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+.tableWrapper {
+  max-height: calc(100vh - 345px);
+  min-height: calc(100vh - 345px);
+  overflow-y: auto;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tableCard {
+  padding: 2rem 2rem 1.5rem 2rem;
+  background: var(--mainColor);
+}
+
+/* Table Styles */
+
+.dataTable {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  border-collapse: collapse;
+}
+
+.dataTable thead th {
+    position: sticky;
+    top: -1px;
+    padding: 0.5rem;
+    background: linear-gradient(to right, #f4f4f4, #e5e5e5);
+    color: var(--textColor);
+    border: 1px solid #ddd;
+    z-index: 10; /* ensures it stays above the table body */
+    cursor: pointer;
+}
+
+.dataTable td {
+    text-align: center;
+    border: 1px solid #ddd;
+    color: var(--textColor);
+    padding: 1rem;
+}
+
+.dataTable tr:nth-child(even){
+    background-color: #f9f9f9;
+}
+
+.dataTable tr:hover {
+    background-color: #f1f5f9; /* Light hover color */
+    transition: background-color 0.2s ease;
+}
+
+/* Pagination */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* vertically center buttons */
+  margin-top: 1.2rem;
+  gap: 0.5rem;
+}
+
+.pagination button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.9rem;
+  width: auto;
+  margin: 0;
+}
+
+.pagination button:hover {
+  background-color: #e0e0e0;
+}
+
+.activePage {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+  font-weight: bold;
+}
+
+.navButton {
+  font-weight: 600;
+  background-color: #ffffff;
+}
+
+.navButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

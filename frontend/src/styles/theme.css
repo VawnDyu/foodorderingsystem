@@ -1,0 +1,15 @@
+/* Theme variables (e.g., colors, spacing) */
+
+body {
+    background: var(--bgColor);
+}
+  
+:root {
+    --textColor: #303030;
+    --bgColor: #e4e4e4;
+    --mainColor: #ffffff;
+}
+
+a {
+    color: #0b57d0;
+}

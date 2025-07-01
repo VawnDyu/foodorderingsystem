@@ -1,0 +1,199 @@
+.cartPageContainer {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.cartPageContainer h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--textColor);
+}
+
+.cartItems {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background-color: var(--mainColor);
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem; /* Temporary */
+    padding: 0.8rem 0rem;
+
+}
+
+.emptyPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding: 1.5rem;;
+}
+
+.emptyPageContent {
+    text-align: center;
+    color: var(--textColor)
+}
+
+.emptyPageContent span {
+    font-size: 64px;
+}
+
+.emptyPageContent p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.itemImageContainer {
+    grid-area: 1 / 1 / 5 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.itemImageContainer img {
+    height: 65px;
+    width: 65px;
+}
+
+.itemNameContainer {
+    grid-area: 1 / 3 / 2 / 7;
+}
+
+.itemNameContainer p:nth-child(1) {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--textColor);
+}
+
+.itemNameContainer p:nth-child(2) {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.itemQuantityContainer {
+    grid-area: 2 / 3 / 3 / 7;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+}
+
+.itemQuantityContainer p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--textColor);
+}
+
+.itemQuantityContainer button {
+    padding: 0.2rem 0.6rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: var(--mainColor);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s ease, background-color 0.3s ease;
+    margin: 0;
+}
+
+.itemQuantityContainer button:active {
+    transform: scale(0.9);
+}
+
+.itemControlsContainer {
+    grid-area: 1 / 7 / 4 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.itemControlsContainer button {
+    padding: 0.2rem 0.6rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #ff5b5b;
+    color: var(--mainColor);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s ease, background-color 0.3s ease;
+    margin: 0;
+}
+
+.itemControlsContainer button:active {
+    transform: scale(0.9);
+}
+
+.itemControlsContainer button:hover {
+    background-color: #c0392b;
+}
+
+.itemSubtotalContainer {
+    text-align: end;
+    background-color: var(--mainColor);
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s ease, background-color 0.3s ease;
+    position: sticky;
+    bottom: 0;
+}
+
+.itemSubtotalContainer h3 {
+    margin-bottom: 8px;
+    color: var(--textColor);
+}
+
+.itemSubtotalContainer span {
+    margin-left: 8px; 
+    color: #4CAF50
+}
+
+.itemSubtotalContainer button {
+    margin: 0;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: var(--textColor);
+    color: var(--mainColor);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.itemSubtotalContainer button:active {
+    transform: scale(0.9);
+}
+
+.itemSubtotalContainer button:nth-child(2){
+    background-color: #ff5b5b;
+}
+
+.itemSubtotalContainer .itemOptionsContainer {
+    display: flex;
+    gap: 24px;
+}
+
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

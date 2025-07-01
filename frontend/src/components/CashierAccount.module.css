@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  height: calc(100vh - 55px); /* adjust based on your top navbar */
+  background-color: #f1f1f1;
+}
+
+.container button {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 280px;
+  height: calc(100vh - 55px);
+  background-color: var(--mainColor);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tabButton {
+  display: flex;
+  align-items: center;
+  background: var(--mainColor);
+  border: none;
+  color: var(--textColor);
+  padding: 1rem 2rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  gap: 0.875rem;
+}
+
+.tabButton:hover {
+  background-color: var(--textColor);
+  color: var(--mainColor);
+}
+
+.tabSelected {
+  background-color: var(--textColor);
+  color: var(--mainColor);
+}
+
+.tabIcon {
+    display: flex;
+    align-items: center;
+  font-size: 1rem;
+}
+
+.content {
+  flex: 1;
+  background-color: var(--bgColor);
+  overflow-y: auto;
+  width: calc(100vw - 280px);
+}

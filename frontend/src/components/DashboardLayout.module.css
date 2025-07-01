@@ -1,0 +1,42 @@
+.dashboardContainer {
+  display: flex;
+  height: 100vh;
+  color: var(--textColor);
+}
+
+.sidebar {
+  width: 220px;
+  background: var(--textColor);
+  color: var(--mainColor);
+  padding: 1rem;
+}
+
+.sidebar h2 {
+  margin-bottom: 2rem;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center; /* vertical alignment */
+  gap: 0.5rem; /* space between icon and text */
+  color: var(--mainColor);
+  text-decoration: none;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.mainContent {
+  flex-grow: 1;
+  background: var(--bgColor);
+  padding: 1rem;
+}
+
+.topbar {
+  background: var(--mainColor);
+  color: var(--textColor);
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}

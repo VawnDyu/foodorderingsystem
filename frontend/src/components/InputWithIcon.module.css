@@ -1,0 +1,39 @@
+/* ==== Input With Icon ==== */
+.inputWrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .inputIcon {
+    position: absolute;
+    top: 37%;
+    left: 12px;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+    color: #888;
+    pointer-events: none;
+  }
+
+  .inputField {
+    width: 100%;
+    padding: 10px 12px 10px 40px;
+    height: 44px;
+    margin-bottom: 1rem;
+    background: var(--mainColor);
+    color: var(--textColor);
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 16px;
+    transition: border-color 0.5s ease;
+    border: 2px solid #ccc
+  }
+
+  .inputField:focus {
+    outline: none;
+    border: 2px solid var(--textColor)
+  }
+
+  button {
+    outline: none;
+    border: none;
+  }

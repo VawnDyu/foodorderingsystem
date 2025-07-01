@@ -1,0 +1,43 @@
+.accountContainer {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.accountContainer h1 {
+  text-align: center;
+  padding: 1.5rem 0 0.5rem 0;
+  background: var(--mainColor);
+  color: var(--textColor);
+}
+
+.tabList {
+  display: flex;
+  border-bottom: 1px solid var(--bgColor);
+  background: var(--mainColor);
+}
+
+.tabButton {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border: none;
+  background: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  color: #666;
+}
+
+.tabButton:hover {
+  color: var(--textColor);
+}
+
+.tabButton:focus {
+  outline: none;
+}
+
+.tabButtonSelected {
+  border-bottom: 2px solid var(--textColor);
+  color: var(--textColor);
+  font-weight: bold;
+}

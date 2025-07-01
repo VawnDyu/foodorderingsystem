@@ -1,0 +1,17 @@
+.orderToast {
+    background-color: #fff;
+    color: #303030;
+    text-align: center;
+  }
+  
+  .orderToastMessage {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .orderToastDismiss {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin-top: 6px;
+    cursor: pointer;
+  }

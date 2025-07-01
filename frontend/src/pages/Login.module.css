@@ -1,0 +1,148 @@
+.loginContainer {
+    background: var(--bgColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* ==== Form Styles ==== */
+
+form {
+    padding: 20px 30px;
+    background: var(--mainColor);
+    width: 410px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+form > h2 {
+    color: var(--textColor);
+    font-size: 35px;
+    text-align: center;
+}
+
+/* ==== Button ==== */
+
+button {
+    width: 100%;
+    background: var(--textColor);
+    margin: 10px 0px;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 6px;
+    color: var(--mainColor);
+    border: none;
+    cursor: pointer;
+}
+
+.buttonSignup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.buttonSignup:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinnerIcon {
+  font-size: 1.2rem;
+  animation: spin 1s linear infinite;
+  vertical-align: middle;
+}
+
+/* ==== Input ==== */
+
+.neutralInput {
+    border: 2px solid var(--bgColor);
+}
+
+.neutralInput:focus {
+    border-color: var(--textColor);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4);
+}
+
+/* ==== Password Field ==== */
+.passwordField {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.passwordField input {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.toggleIcon {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 1.5rem;
+  color: #888;
+  cursor: pointer;
+}
+
+/* ==== Custom Checkbox ==== */
+.styledCheckbox {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+  margin-left: 1px;
+  font-size: 15px;
+  color: var(--textColor);
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+}
+
+.styledCheckbox input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  cursor: pointer;
+}
+
+.styledCheckbox .checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--textColor);
+  border-radius: 4px;
+  margin-right: 10px;
+  background-color: var(--bgColor);
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.styledCheckbox input:checked ~ .checkmark {
+  background-color: var(--textColor);
+}
+
+.styledCheckbox input:checked ~ .checkmark::after {
+  content: "";
+  position: absolute;
+  top: 1.2px;
+  left: 5.5px;
+  width: 5px;
+  height: 12px;
+  border: solid var(--mainColor);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* ==== Animations ==== */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

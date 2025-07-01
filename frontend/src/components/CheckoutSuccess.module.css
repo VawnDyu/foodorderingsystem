@@ -1,0 +1,31 @@
+.successContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding: 1.5rem;
+}
+
+.successContent {
+    text-align: center;
+    color: var(--textColor);
+}
+
+.successContent h1 {
+    font-size: 2rem;
+}
+
+.successContent p {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.successContent button {
+    width: 50%;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: var(--textColor);
+    color: var(--mainColor);
+    font-weight: 500;
+    font-size: 0.9rem;
+}

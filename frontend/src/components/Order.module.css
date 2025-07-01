@@ -1,0 +1,120 @@
+/* Order.css */
+.orderContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .menuItems {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .menuItem {
+    border: 1px solid var(--bgColor);
+    border-radius: 12px;
+    padding: 1rem;
+    background-color: var(--mainColor);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .menuItem h4 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--textColor);
+  }
+
+  .menuItem p {
+    font-size: 1rem;
+    color: var(--textColor);
+  }
+
+  .menuItemImage {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: var(--bgColor);
+  }
+  
+  .placeOrderButton {
+    background-color: #4CAF50;
+    font-size: 16px;
+    color: var(--mainColor);
+    border: none;
+    position: sticky;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .placeOrderButton:hover {
+    background-color: #45a049;
+  }
+
+  .placeOrderButton:focus {
+    outline: none;
+  }
+
+  .quantityControls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  
+  .quantityControls button {
+    padding: 0.2rem 0.6rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #4CAF50; /* Green color */
+    color: var(--mainColor);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s ease, background-color 0.3s ease;
+  }
+
+  .quantityControls button:hover {
+    background-color: #45a049;
+  }
+  
+  .quantityControls button:active {
+    transform: scale(0.9);
+  }
+  
+  .quantityControls span {
+    width: 2rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--textColor);
+  }
+
+  .circularBtn {
+    margin: 0;
+  }
+  

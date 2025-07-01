@@ -1,0 +1,25 @@
+# 🔐 Environment files
+.env
+frontend/.env
+backend/.env
+
+# 📦 Node modules (frontend & backend)
+**/node_modules
+
+# ⚙️ Build & cache (frontend)
+frontend/dist
+**/.vite
+
+# 🔑 SSL Certificates
+**/*.pem
+**/cert/
+
+# 🪵 Logs
+*.log
+
+# 💻 OS-specific junk
+.DS_Store
+Thumbs.db
+
+# 📝 Optional: VSCode workspace settings (if you want to ignore editor configs)
+.vscode/

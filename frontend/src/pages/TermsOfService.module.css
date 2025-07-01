@@ -1,0 +1,35 @@
+.termsContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    color: var(--textColor);
+    background: var(--mainColor);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+  
+.termsTitle {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+  
+.termsDate {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+}
+  
+.termsSection {
+    margin-bottom: 30px;
+}
+  
+.termsSection h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+  
+.termsSection ul {
+    padding-left: 20px;
+    line-height: 1.6;
+}

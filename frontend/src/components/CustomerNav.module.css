@@ -1,0 +1,151 @@
+/* Reset some defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar Container */
+  .navbar {
+    position: sticky;
+    top: 0;
+    background-color: var(--textColor);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .navbarLogo a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--mainColor);
+    transition: color 0.3s ease;
+  }
+  
+  .navbarLogo a:hover {
+    color: #ff6347;
+  }
+
+  .cartLink {
+    display: flex;
+    align-items: start;  /* Center the icon and text vertically */
+    justify-content: start; /* Optional, to center horizontally if needed */
+  }
+  
+  .cartIcon {
+    margin-right: 5px;  /* Space between the icon and the text */
+    font-size: 22px; /* Adjust the size of the icon */
+  }
+  
+  /* Navbar Links */
+  .navbarLinks {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .navbarLinks ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  .navbarLinks li {
+    margin-left: 20px;
+  }
+  
+  .navbarLinks a {
+    color: var(--mainColor);
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+    font-weight: 500;
+  }
+  
+  .navbarLinks a:hover {
+    background-color: #ff6347;
+    color: white;
+  }
+  
+  /* Mobile Styles */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .hamburgerLine {
+    width: 25px;
+    height: 3px;
+    background-color: var(--mainColor);
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  .hamburger.active .hamburgerLine:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 8px);
+  }
+  
+  .hamburger.active .hamburgerLine:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active .hamburgerLine:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -8px);
+  }
+  
+  @media (max-width: 768px) {
+    .navbarLinks {
+      display: none;
+      position: absolute;
+      top: 66px;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      text-align: center;
+      flex-direction: column;
+      padding: 10px 0;
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .navbarLinks.mobileActive {
+      display: flex;
+      transform: translateY(0);
+    }
+  
+    .navbarLinks.mobileActive {
+      transform: translateY(0);
+    }
+
+    .navbarLinks ul {
+      display: block;
+    }
+  
+    .navbarLinks li {
+      margin: 10px 0;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+
+  @media print {
+    .navbar {
+      display: none;
+    }
+  }

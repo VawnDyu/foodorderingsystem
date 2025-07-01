@@ -1,0 +1,371 @@
+.menuPage {
+    padding: 2rem 2rem 1.5rem 2rem;
+    text-align: center;
+    background: var(--mainColor);
+    border-radius: 8px;
+    width: auto;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* soft card shadow */
+    border: 1px solid #eee; /* subtle border */
+}
+
+.btnAdd {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  width: auto;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #22c55e, #16a34a);
+  color: var(--mainColor);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btnAdd:hover {
+  background: linear-gradient(to right, #16a34a, #15803d); /* Green-600 to Green-700 */
+  transform: scale(0.98);
+}
+
+.noResults {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 315px); /* fills .tableWrapper */
+  color: #888;
+  font-size: 1rem;
+  padding: 2rem;
+}
+
+
+/* Table Styles */
+.tableWrapper {
+    max-height: calc(100vh - 315px); /* Adjust to your layout */
+    min-height: calc(100vh - 315px);
+    overflow-y: auto;
+    margin-top: 1rem;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+.menuTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+
+  .menuTable thead th {
+    position: sticky;
+    top: -1px;
+    padding: 0.5rem;
+    background: linear-gradient(to right, #f4f4f4, #e5e5e5);
+    color: var(--textColor);
+    border: 1px solid #ddd;
+    z-index: 10; /* ensures it stays above the table body */
+    cursor: pointer;
+  }
+
+  .menuTable td {
+    border: 1px solid #ddd;
+    color: var(--textColor);
+    padding: 0.7rem;
+  }
+
+  .menuTable tr:nth-child(even){
+    background-color: #f9f9f9;
+  }
+
+  .menuTable tr:hover {
+    background-color: #f1f5f9; /* Light hover color */
+    transition: background-color 0.2s ease;
+  }
+
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tableImage {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .description {
+    max-width: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .sortHeader {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+  }
+
+  .tooltipWrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .actions button {
+    margin: 0;
+    padding: 0.4rem;
+    color: var(--mainColor);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 2.3rem;
+    height: 2.3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s ease, background-color 0.3s ease;
+    z-index: 1;
+  }
+
+.btnTooltip {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #303030;
+  color: var(--mainColor);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000; /* ensure it appears above sticky thead */
+}
+
+.tooltipWrapper:hover .btnTooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(5px);
+}
+
+.btnEdit {
+  background-color: #5b9bd5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btnEdit:hover {
+    background-color: #4a86c5;
+    transform: scale(0.95);
+}
+
+.btnDelete {
+    background-color: #ef5350;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btnDelete:hover {
+    background-color: #d84340;
+    transform: scale(0.95);
+}
+
+/* Searchbar Styles */
+
+.searchBar {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  font-size: 0.875rem;
+  color: #888;
+  transition: transform 0.3s ease, color 0.3s ease;
+  pointer-events: none;
+}
+
+.searchIcon.active {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.6rem 1rem 0.6rem 2.3rem;
+  color: var(--textColor);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  transition: border 0.3s;
+}
+
+.searchInput:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.clearButton {
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  z-index: 2;
+}
+
+.clearButton:hover {
+  color: #ff5a5f;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap; /* Optional for responsiveness */
+}
+
+/* Pagination */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* vertically center buttons */
+  margin-top: 1.2rem;
+  gap: 0.5rem;
+}
+
+.pagination button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.9rem;
+  width: auto;
+  margin: 0;
+}
+
+.pagination button:hover {
+  background-color: #e0e0e0;
+}
+
+.activePage {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+  font-weight: bold;
+}
+
+.navButton {
+  font-weight: 600;
+  background-color: #ffffff;
+}
+
+.navButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Category Styles */
+.categoryButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.categoryButton {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0;
+  padding: 8px 14px;
+  background-color: #d1d5db;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.categoryButton:hover {
+  background-color: #9ca3af;
+  transform: translateY(-2px);
+}
+
+.categoryButton.active {
+  background-color: #3498db;
+  color: var(--mainColor);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+
+
+ /* Spinner Loading */
+
+ .spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: calc(100vh - 300px); /* Adjust to your layout */
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ddd;
+  border-top: 4px solid #3498db; /* blue highlight */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
