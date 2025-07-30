@@ -49,23 +49,23 @@ const DashboardLayout = ({ children }) => {
     return (
       <div className={styles.dashboardContainer}>
         <aside className={styles.sidebar}>
-          <h2>🍔 Food Admin</h2>
+          <h2>🍔 Admin</h2>
           <nav>
             <Link to="/dashboard">
               <HiOutlineSquares2X2 size={24} /> Dashboard
             </Link>
-            <Link to="/dashboard">
+            {/* <Link to="/dashboard">
               <FaClipboardList size={24} /> Orders
-            </Link>
+            </Link> */}
             <Link to="/menu">
               <IoFastFood size={24} /> Menu
             </Link>
             <Link to="/users">
               <HiMiniUsers size={24} /> Users
             </Link>
-            <Link to="/dashboard">
+            {/* <Link to="/dashboard">
               <IoSettingsSharp size={24} /> Settings
-            </Link>
+            </Link> */}
             <Link to="/login" onClick={RemoveTokens}>
               <IoLogOutSharp size={24} /> Logout
             </Link>

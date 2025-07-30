@@ -59,7 +59,7 @@ function App() {
         <ToastContainer position="top-center" autoClose={5000} closeButton={false} pauseOnHover={false} onClick={() => toast.dismiss()} toastClassName="custom-toast"
         bodyClassName="custom-toast-body" />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/terms" element={<Terms />} />

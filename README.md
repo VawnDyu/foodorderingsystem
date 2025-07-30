@@ -2,7 +2,7 @@
 
 A full-stack Food Ordering System built with the **MERN stack** and **Vite**. This app supports customer orders, real-time kitchen/cashier updates, and an interactive dashboard.
 
-> ✅ Personal project built to improve my full-stack development skills and showcase my ability to build real-world systems.
+> Personal project built to improve my full-stack development skills and showcase my ability to build real-world systems.
 
 ---
 
@@ -35,12 +35,24 @@ A full-stack Food Ordering System built with the **MERN stack** and **Vite**. Th
 
 ---
 
+## 📷 Screenshots
+If you want to look and check for the screenshots of this project, you can go to the screenshots directory.
+
+```bash
+foodorderingsystem/
+├── backend/
+├── frontend/
+├── screenshots/ # (Right here!)
+└── README.md
+```
+
 ## 📁 Project Structure
 
 ```bash
 foodorderingsystem/
 ├── backend/ # Express API, models, routes
 ├── frontend/ # Vite + React frontend
+├── screenshots/ # Screenshots
 └── README.md # You're here!
 
 ```

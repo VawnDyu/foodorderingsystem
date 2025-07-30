@@ -150,7 +150,7 @@ const Login = () => {
                     )}
                 </button>
 
-                <p><Link to="/signup">Forgot Password?</Link></p>
+                <p><Link to="/signup">Sign Up</Link></p>
             </form>
         </div>
     );

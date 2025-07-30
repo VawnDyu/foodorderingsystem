@@ -139,7 +139,7 @@ const DashboardCards = () => {
         </div>
 
         {/* Static Cards */}
-        <div className={styles.card}>Users: 182</div>
+        <div className={styles.card}>Users: 12</div>
       </div>
       <div className={styles.tableCard}>
       <div className={styles.tableWrapper}>

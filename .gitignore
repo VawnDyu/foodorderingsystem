@@ -3,10 +3,10 @@
 frontend/.env
 backend/.env
 
-# 📦 Node modules (frontend & backend)
+# 📦 Node modules
 **/node_modules
 
-# ⚙️ Build & cache (frontend)
+# ⚙️ Vite build output (even if it doesn't exist yet)
 frontend/dist
 **/.vite
 
@@ -17,9 +17,9 @@ frontend/dist
 # 🪵 Logs
 *.log
 
-# 💻 OS-specific junk
+# 💻 OS junk files
 .DS_Store
 Thumbs.db
 
-# 📝 Optional: VSCode workspace settings (if you want to ignore editor configs)
+# 🧠 Editor settings (optional)
 .vscode/
