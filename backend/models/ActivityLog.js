@@ -13,7 +13,7 @@ const activityLogSchema = new mongoose.Schema({
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
-      required: false // Optional depending on if logs must be tied to a user
+      required: false,
     },
 });
 

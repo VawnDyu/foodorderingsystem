@@ -3,15 +3,12 @@ const router = express.Router();
 const authMiddleware = require('../middleware/authMiddleware');
 const User = require('../models/User')
 const bcrypt = require('bcryptjs');
-const ActivityLog = require('../models/ActivityLog'); // Assuming you have an ActivityLog model
+const ActivityLog = require('../models/ActivityLog');
 
 // PATCH /api/user/avatar
 router.patch('/avatar', authMiddleware, async (req, res) => {
-  console.log('Route reached!');  // Log to check if route is reached
-  const userId = req.user._id; // assuming your middleware adds user info to req.user
+  const userId = req.user._id;
   const { imgSrc } = req.body;
-
-  console.log('Request Body:', req.body);
 
   try {
     const updatedUser = await User.findByIdAndUpdate(
@@ -29,7 +26,6 @@ router.patch('/avatar', authMiddleware, async (req, res) => {
 
     res.status(200).json({ message: 'Avatar updated successfully' });
   } catch (error) {
-    console.error('Failed to update avatar:', error);
     res.status(500).json({ message: 'Server error' });
   }
 });
@@ -76,7 +72,6 @@ router.patch('/password', authMiddleware, async (req, res) => {
 
     res.status(200).json({ message: 'Password updated successfully.' });
   } catch (err) {
-    console.error('Error updating password:', err);
     res.status(500).json({ message: 'Server error. Please try again later.' });
   }
 });
@@ -123,7 +118,6 @@ router.patch('/nickname', authMiddleware, async (req, res) => {
     // Return success response
     res.status(200).json({ message: 'Nickname updated successfully.' });
   } catch (err) {
-    console.error('Error updating nickname:', err);
     res.status(500).json({ message: 'Internal server error. Please try again later.' });
   }
 });
@@ -157,7 +151,6 @@ router.get('/:userId/activity-logs', async (req, res) => {
     const logs = await ActivityLog.find({ user: userId }).sort({ date: -1 }); //Gets the recent logs first
     res.json(logs);
   } catch (err) {
-    console.error('Error fetching logs:', err);
     res.status(500).json({ message: 'Server error' });
   }
 });
@@ -173,7 +166,6 @@ router.get('/users', async (req, res) => {
 
     res.json(users);
   } catch (err) {
-    console.error('❌ Error fetching users:', err);
     res.status(500).json({ message: 'Server error while fetching users.' });
   }
 });

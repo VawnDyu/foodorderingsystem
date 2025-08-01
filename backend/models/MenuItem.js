@@ -4,7 +4,7 @@ const MenuItemSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    unique: true, //Ensures that the name is unique in the database
+    unique: true,
   },
   emoji: {
     type: String,
@@ -24,7 +24,7 @@ const MenuItemSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    enum: ['drinks', 'meals', 'desserts'], // restrict to specific values
+    enum: ['drinks', 'meals', 'desserts'],
     required: true,
   },
 });

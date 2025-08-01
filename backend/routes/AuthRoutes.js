@@ -22,7 +22,7 @@ router.post('/signup', async (req, res) => {
     try {
         const existingUser = await User.findOne({ username: new RegExp('^' + username + '$', 'i') });
         const existingEmail = await User.findOne({email});
-        
+
         if (existingUser) return res.status(400).json({
             error: 'Username is already taken'
         });
@@ -50,7 +50,7 @@ router.post('/signup', async (req, res) => {
 const generateAccessToken = (userId) => {
     return jwt.sign({ _id: userId }, process.env.JWT_SECRET, { expiresIn: '15m' }); // short-lived
 };
-  
+
 const generateRefreshToken = (userId) => {
     return jwt.sign({ _id: userId }, process.env.JWT_REFRESH_SECRET, { expiresIn: '7d' }); // long-lived
 }
@@ -101,7 +101,6 @@ router.post('/login', async (req, res) => {
         });
 
     } catch (err) {
-        console.error(err);
         res.status(500).json({
             error: 'Something went wrong',
         });
@@ -120,12 +119,12 @@ router.post('/logout', (req, res) => {
       secure: true,
       sameSite: 'Strict',
     });
-  
+
     res.status(200).json({ message: 'Logged out successfully' });
 });
 
 
-//Refresh token route  
+//Refresh token route
 router.post('/refresh-token', async (req, res) => {
   const token = req.cookies.refreshToken;
 
@@ -143,7 +142,7 @@ router.post('/refresh-token', async (req, res) => {
 
     const newAccessToken = generateAccessToken(payload._id);
 
-    
+
     // Set the new access token in the cookies
     res.cookie('accessToken', newAccessToken, {
         httpOnly: true,
@@ -169,15 +168,15 @@ router.post('/logout', (req, res) => {
       sameSite: 'Strict',
       path: '/', // Make sure this matches how it was set
     });
-  
+
     res.clearCookie('refreshToken', {
       httpOnly: true,
       secure: true,
       sameSite: 'Strict',
       path: '/',
     });
-  
+
     res.status(200).json({ message: 'Logged out successfully' });
-});  
+});
 
 module.exports = router;

@@ -10,8 +10,6 @@ module.exports = (io, cashierSockets) => {
   router.post('/order', authMiddleware, async (req, res) => {
     const { items } = req.body;
 
-    console.log('Authenticated user:', req.user);
-
     if (!items || items.length === 0) {
       return res.status(400).json({ error: 'Order must contain at least one item.' });
     }
@@ -48,7 +46,6 @@ module.exports = (io, cashierSockets) => {
 
       // ✅ Broadcast to cashiers
       for (const socketId of Object.values(cashierSockets)) {
-        console.log('Emitting to socket:', socketId);
         io.to(socketId).emit('orderUpdate', newOrder);
       }
 
@@ -85,7 +82,6 @@ router.get('/orders', async (req, res) => {
 
     res.json(orders);
   } catch (error) {
-    console.error('Error fetching orders:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
@@ -117,15 +113,6 @@ router.get('/orders/count/:range', async (req, res) => {
       return res.status(400).json({ error: 'Invalid range type' });
   }
 
-  // console.log('Start Date:', startDate.toLocaleString('en-PH', {
-  //   weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-  //   hour: '2-digit', minute: '2-digit'
-  // }));
-  // console.log('End Date:', endDate.toLocaleString('en-PH', {
-  //   weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-  //   hour: '2-digit', minute: '2-digit'
-  // }));
-
   try {
     // ✅ Fetch the orders
     const orders = await Order.find({
@@ -153,11 +140,6 @@ router.get('/orders/count/:range', async (req, res) => {
       });
     });
 
-    // const sortedItems = Object.entries(itemFrequency)
-    //   .sort((a, b) => b[1] - a[1]);
-
-    // console.log('Sorted Item Frequency:', sortedItems);
-
     // Find the top dish
     let topDish = '';
     let maxCount = 0;
@@ -177,8 +159,6 @@ router.get('/orders/count/:range', async (req, res) => {
       }
     }
 
-    // console.log('Top Dish:', topDish, 'with', maxCount, 'orders');
-
     // ✅ Calculate total sales from the fetched orders
     const totalSales = orders.reduce((sum, order) => sum + (order.totalPrice || 0), 0);
 
@@ -190,7 +170,6 @@ router.get('/orders/count/:range', async (req, res) => {
       completedOrders: orders,
     });
   } catch (err) {
-    console.error('Error in /orders/count/:range:', err);
     res.status(500).json({ error: 'Server error' });
   }
 });
@@ -207,7 +186,6 @@ router.get('/orders/:id', async (req, res) => {
     }
     res.json(orders);
   } catch (error) {
-    console.error(error);
     res.status(500).send('Server error');
   }
 });
@@ -222,7 +200,6 @@ router.get('/order/:id', async (req, res) => {
     }
     res.json(menuItem);
   } catch (error) {
-    console.error(error);
     res.status(500).send('Server error');
   }
 });

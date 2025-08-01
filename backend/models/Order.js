@@ -3,17 +3,17 @@ const mongoose = require('mongoose');
 const orderSchema = new mongoose.Schema({
   customerId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User', // Assuming your user model is named 'User'
+    ref: 'User',
     required: true,
   },
   items: [
     {
-      itemId: {  // Changed from menuItem to itemId
+      itemId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'MenuItem', // Assuming you have a MenuItem model
+        ref: 'MenuItem',
         required: true,
       },
-      name: String,      // Menu item name (populated automatically)
+      name: String,
       quantity: {
         type: Number,
         required: true,
@@ -42,9 +42,8 @@ const orderSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 orderSchema.pre('save', async function(next) {
-  // Automatically populate the items with the name and price from the itemId (instead of menuItem)
   for (let i = 0; i < this.items.length; i++) {
-    const menuItem = await mongoose.model('MenuItem').findById(this.items[i].itemId); // Use itemId here
+    const menuItem = await mongoose.model('MenuItem').findById(this.items[i].itemId);
     if (menuItem) {
       this.items[i].name = menuItem.name;
       this.items[i].price = menuItem.price;

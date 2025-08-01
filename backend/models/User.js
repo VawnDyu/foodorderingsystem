@@ -27,7 +27,7 @@ const UserSchema = new mongoose.Schema ({
     },
     imgSrc: {
         type: String,
-        default: 'avatar1.png', // Optional: default to empty string or placeholder image
+        default: 'avatar1.png',
     },
     createdAt: {
         type: Date,

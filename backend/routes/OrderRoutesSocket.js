@@ -26,13 +26,10 @@ module.exports = (io, customerSockets) => {
     const customerIdStr = updatedOrder.customerId?.toString();
 
     if (!customerIdStr) {
-      console.error('❌ Missing customerId in updated order');
       return res.status(500).json({ message: 'Invalid customer ID' });
     }
 
     const customerSocketId = customerSockets[customerIdStr];
-
-    console.log('Customer Socket ID:', customerSocketId);
 
     if (customerSocketId) {
       io.to(customerSocketId).emit('orderUpdate', updatedOrder);
@@ -46,7 +43,6 @@ module.exports = (io, customerSockets) => {
 
     return res.status(200).json(updatedOrder);
   } catch (err) {
-    console.error('Error updating order:', err);
     return res.status(500).json({ message: 'Failed to update order status' });
   }
 });
@@ -71,13 +67,10 @@ module.exports = (io, customerSockets) => {
     const customerIdStr = updatedOrder.customerId?.toString();
 
     if (!customerIdStr) {
-      console.error('❌ Missing customerId in updated order');
       return res.status(500).json({ message: 'Invalid customer ID' });
     }
 
     const customerSocketId = customerSockets[customerIdStr];
-
-    console.log('Customer Socket ID:', customerSocketId);
 
     if (customerSocketId) {
       io.to(customerSocketId).emit('orderUpdate', updatedOrder);
@@ -91,7 +84,6 @@ module.exports = (io, customerSockets) => {
 
     return res.status(200).json(updatedOrder);
   } catch (err) {
-    console.error('Error updating order:', err);
     return res.status(500).json({ message: 'Failed to update order status' });
   }
 });
@@ -116,13 +108,10 @@ module.exports = (io, customerSockets) => {
     const customerIdStr = updatedOrder.customerId?.toString();
 
     if (!customerIdStr) {
-      console.error('❌ Missing customerId in updated order');
       return res.status(500).json({ message: 'Invalid customer ID' });
     }
 
     const customerSocketId = customerSockets[customerIdStr];
-
-    console.log('Customer Socket ID:', customerSocketId);
 
     if (customerSocketId) {
       io.to(customerSocketId).emit('orderUpdate', updatedOrder);
@@ -136,7 +125,6 @@ module.exports = (io, customerSockets) => {
 
     return res.status(200).json(updatedOrder);
   } catch (err) {
-    console.error('Error updating order:', err);
     return res.status(500).json({ message: 'Failed to update order status' });
   }
 });
@@ -162,13 +150,10 @@ router.patch('/:orderId/cancel', async (req, res) => {
     const customerIdStr = updatedOrder.customerId?.toString();
 
     if (!customerIdStr) {
-      console.error('❌ Missing customerId in updated order');
       return res.status(500).json({ message: 'Invalid customer ID' });
     }
 
     const customerSocketId = customerSockets[customerIdStr];
-
-    console.log('Customer Socket ID:', customerSocketId);
 
     if (customerSocketId) {
       io.to(customerSocketId).emit('orderUpdate', updatedOrder);
@@ -182,7 +167,6 @@ router.patch('/:orderId/cancel', async (req, res) => {
 
     return res.status(200).json(updatedOrder);
   } catch (err) {
-    console.error('Error updating order:', err);
     return res.status(500).json({ message: 'Failed to update order status' });
   }
 });
