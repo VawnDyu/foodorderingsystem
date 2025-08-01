@@ -14,6 +14,7 @@ A full-stack Food Ordering System built with the **MERN stack** and **Vite**. Th
 - 🔐 Authentication with **JWT + Cookies**
 - 📦 RESTful API built with Express & MongoDB
 - 🌐 CORS, HTTPS dev server, environment variables
+- 🖼️ Image upload and hosting with **Cloudinary**
 
 ---
 
